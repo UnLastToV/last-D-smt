@@ -72,8 +72,15 @@
               placeholder="กรุณากรอกข้อมูล" required>
           </div>
           <div class="col">
-            <label for="status">สถานะ</label>
-            <div class="form-check">
+            <label for="status">(เลือก) สถานะ</label>
+            <div class="form-group">
+              <select class="form-control" id="status" name="status" onchange="updateColor(this)">
+                <option value="ชำระเงินเสร็จสิ้น" data-color="#28a745">ชำระเงินเสร็จสิ้น</option> <!-- สีเขียว -->
+                <option value="ยังไม่ได้ชำระเงิน" data-color="#ffc107">ยังไม่ได้ชำระเงิน</option> <!-- สีเหลือง -->
+                <option value="ยกเลิกใบสั่ง" data-color="#dc3545">ยกเลิกใบสั่ง</option> <!-- สีแดง -->
+              </select>
+            </div>
+            <!-- <div class="form-check">
               <input class="form-check-input" type="radio" name="status" id="paid" value="ชำระเงินเสร็จสิ้น" <%=customer.status === 'ชำระเงินเสร็จสิ้น' ? 'checked' : '' %>>
               <label class="form-check-label" for="paid">ชำระเงินเสร็จสิ้น</label>
             </div>
@@ -85,7 +92,7 @@
               <input class="form-check-input" type="radio" name="status" id="cancelled" value="ยกเลิกใบสั่ง" <%=customer.status === 'ยกเลิกใบสั่ง' ? 'checked' : '' %>>
               <label class="form-check-label" for="cancelled">ยกเลิกใบสั่ง</label>
             </div>
-          </div>
+          </div> -->
         </div>
           </div>
         </div>
@@ -156,3 +163,20 @@
 </body>
 
 </html>
+
+<script>
+
+  function updateColor(selectElement) {
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    var color = selectedOption.getAttribute("data-color");
+    selectElement.style.color = color;
+  }
+
+  // เรียกฟังก์ชันนี้ตอนโหลดหน้าเพื่อตั้งค่าสีเริ่มต้น
+  document.addEventListener("DOMContentLoaded", function () {
+    var selectElement = document.getElementById("status");
+    updateColor(selectElement);
+  });
+
+
+</script>
