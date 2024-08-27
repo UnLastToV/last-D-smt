@@ -54,19 +54,19 @@
 
     <li class="list-group-item">
       <div class="row">
-        <div class="col" style="max-width: 140px"> <b>ขื่อ-นามสกุล:</b></div>
+        <div class="col" style="max-width: 140px"> <b>เลขใบขับขี่:</b></div>
         <div class="col">
-          <%= customer.firstName %>
-            <%= customer.lastName %>
+          <%= customer.licenseID %>
         </div>
       </div>
     </li>
 
     <li class="list-group-item">
       <div class="row">
-        <div class="col" style="max-width: 140px"> <b>เบอร์โทร:</b></div>
+        <div class="col" style="max-width: 140px"> <b>ขื่อ-นามสกุล:</b></div>
         <div class="col">
-          <%= customer.tel %>
+          <%= customer.firstName %>
+            <%= customer.lastName %>
         </div>
       </div>
     </li>
@@ -94,6 +94,24 @@
         <div class="col" style="max-width: 140px"> <b>สถานะ:</b></div>
         <div class="col">
           <%= customer.status %>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"> <b>ค่าปรับ:</b></div>
+        <div class="col">
+          <%= customer.cost %>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px "> <b>ประเภทรถ:</b></div>
+        <div class="col">
+          <%= customer.carType %>
         </div>
       </div>
     </li>

@@ -14,9 +14,10 @@
       <thead>
         <tr>
           <th scope="col">เลขที่ใบสั่ง</th>
+          <th scope="col">เลขบัตรประชาชน</th>
           <th scope="col">ชื่อ</th>
           <th scope="col">นามสกุล</th>
-          <th scope="col">เบอร์โทร</th>
+          <th scope="col">ฐานกระทำผิด</th>
           <th scope="col">สถานะ</th>
           <th scope="col" class="text-end">Action</th>
         </tr>
@@ -25,11 +26,11 @@
         <% customers.forEach(element => { %>
           <tr class="align-middle">
             <td><%= element.number %></td>
+            <td><%= element.citizenID %></td>
             <td><%= element.firstName %></td>
             <td><%= element.lastName %></td>
-            <td><%= element.tel %></td>
+            <td><%= element.breakRule %></td>
             <td><%= element.status %></td>
-            
             <td>
 
               <div class="d-flex flex-row justify-content-end gap-2">

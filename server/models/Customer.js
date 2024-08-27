@@ -22,10 +22,6 @@ const CustomerSchema = new Schema({
     type: String,
     required: true
   },
-  tel: {
-    type: String,
-    required: true
-  },
   number: {
     type: String,
     required: true
